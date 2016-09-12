@@ -40,9 +40,8 @@ def insertionSort(x):
         while j > 0 and x[j] < x[j - 1]:
             x[j], x[j - 1] = x[j - 1], x[j]
             j = j - 1
-
-
     return x
+    
 #sorts the array or list by gnome sort algorithm and returns the array/list
 def gnomeSort(x):#
     i = 0
