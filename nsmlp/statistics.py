@@ -106,8 +106,9 @@ def iqr(x):
 
 #summary method: Returns the main statistics of the dataset
 def summary(x):
-    df = pd.DataFrame(columns=("Min.", "1st Qu.", "Median", "Mean", "3rd Qu.", "Max."))
+    
     if "DataFrame" in str(type(x)):
+        df = pd.DataFrame(columns=("Min.", "1st Qu.", "Median", "Mean", "3rd Qu.", "Max."))
         for column in list(x.columns.values):
             df.loc[column] = (min(x[column]), quar(x[column], p=0.25),
                                    median(x[column]), round(mean(x[column]),3), quar(x[column], p=0.75), max(x[column]))
