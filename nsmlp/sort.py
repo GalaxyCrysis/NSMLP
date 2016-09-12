@@ -66,6 +66,37 @@ def combSort(x):
         if gap <=1:
             break
     return x
+    
+#sorts the list or array with merge sort algorithm
+def mergeSort(x):
+    if len(x) <= 1:
+        return
+    mid = int(len(x)/2)
+    left = x[:mid]
+    right = x[mid:]
+    #now split again both parts
+    mergeSort(left)
+    mergeSort(right)
+
+    i,j,n = 0,0,0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            x[n] = left[i]
+            i = i+1
+        else:
+            x[n] = right[j]
+            j = j+1
+        n = n+1
+    while i < len(left):
+        x[n] = left[i]
+        i = i+1
+        n = n+1
+    while j < len(right):
+        x[n] = right[j]
+        j = j+1
+        n = n+1
+
+    return x
 
 
 
