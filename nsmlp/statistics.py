@@ -183,6 +183,33 @@ def dnorm(x, mean=0,std = 1, log = False):
             return prob
 
 
+#calculates the kurtosis of the dataset and returns it
+def kurtosis(x):
+    #calculate mean and std
+    avg = mean(x)
+    standard_deviation = std(x)
+    i = 0
+    k = 0
+    while i < len(x):
+        k = k + ((x[i]-avg)/standard_deviation)**4
+        i = i +1
+
+    return (1/len(x))*k-3
+
+
+#calculates the skew of the dataset and returns it
+def skew(x):
+    #calculate mean and std
+    avg = mean(x)
+    standard_deviation = std(x)
+    s = 0
+    i = 0
+
+    while i < len(x):
+        s = s + ((x[i]-avg)/standard_deviation)**3
+        i = i+1
+    return (1/len(x))*s
+
 
 
 
